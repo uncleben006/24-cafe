@@ -57,4 +57,8 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+  $('.merchandise a').on('click', function (e) {
+    console.log($(this).data('slide'))
+  })
+
 })(jQuery); // End of use strict
