@@ -64,21 +64,6 @@ section {
     background-position: center center;
 }
 
-.header-carousel-item {
-    height: 75vh;
-    background-color: #ccc;
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, .35)
-}
-
-.carousel-indicators>li {
-    border-radius: 100%;
-    width: 15px;
-    height: 15px;
-}
-
 .btn {
     border-width: 2px;
 }
@@ -97,6 +82,20 @@ section {
     }
 }
 
+.header-carousel-item {
+    height: 75vh;
+    background-color: #ccc;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, .35)
+}
+
+.carousel-indicators>li {
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+}
 
 .carousel-inner > .item-1 {
     background-image: url(../images/24-cafe-banner.jpg); 
