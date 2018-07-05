@@ -13,7 +13,7 @@
 @import "forms";
 @import "buttons";
 @import "transitions";
-@import "dropdown";
+
 @import "button-group";
 @import "input-group";
 @import "custom-forms";
@@ -36,8 +36,11 @@
 @import "utilities";
 
 // Custom
+@import "components/dropdown";
 @import "components/navpanel";
 @import "components/navbar";
+@import "components/footer";
+
 
 // Global
 @import "global";

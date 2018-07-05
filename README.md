@@ -11,4 +11,8 @@ npm install gulp -g
 ```
 npm install
 gulp
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> d096b526228250e593c79a84e2062e498989acd1
