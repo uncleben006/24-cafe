@@ -1,5 +1,10 @@
 .merchandise-header {
-  padding: 40px 0;
+  padding: 2rem 0;
+  height: 75vh;
+  background-size: cover;
+  background-image: url(../images/badminton-background.jpg);
+  background-position: center;
+
   background-color: fade-out($info, .25);
   .breadcrumb {
     background-color: transparent;
