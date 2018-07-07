@@ -1,10 +1,10 @@
 (function($) {
   "use strict"; // Start of use strict  
 
-  window.addEventListener('load', function () {
-    var firstSlide = document.querySelector('.first-slide')
-    var orderList = document.querySelector('#order-list')
-    var form = document.getElementById("first-slide")
+  function validateSlider() {
+    let firstSlide = document.querySelector('.first-slide')
+    let orderList = document.querySelector('#order-list')
+    let form = document.getElementById("first-slide")
     form.addEventListener('submit', function (event) {
       if (form.checkValidity() == false) {        
         event.preventDefault()
@@ -17,7 +17,8 @@
       form.classList.add("was-validated")
       console.log(form.checkValidity())
     }, false)
-  }, false);
+  }    
+  window.addEventListener('load', validateSlider, false)
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
@@ -57,6 +58,7 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+  // merchandise carousel
   $('.merchandise-carousel a').on('click', function () {
     var slide = $(this).data('slide');    
     console.log('click')

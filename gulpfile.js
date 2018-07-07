@@ -2,6 +2,7 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const browserSync = require('browser-sync');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const autoprefixer = require('autoprefixer');
 const minimist = require('minimist'); // 用來讀取指令轉成變數
@@ -31,7 +32,8 @@ gulp.task('vendorJs', function () {
 })
 
 gulp.task('scripts', function() {
-  return gulp.src('./source/js/*.js')    
+  return gulp.src('./source/js/*.js')   
+    .pipe(babel({ presets: ['env'] })) 
     .pipe(uglify())
     .pipe(gulp.dest('./public/javascripts'))
     .pipe(browserSync.reload({
@@ -65,7 +67,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('copy', function () {
-  gulp.src(['./source/**/**', '!source/stylesheets/**/**'])
+  gulp.src(['./source/**/**', '!source/stylesheets/**/**','!source/js/','!source/js/*'])
     .pipe(gulp.dest('./public/'))
     .pipe(browserSync.reload({
       stream: true
