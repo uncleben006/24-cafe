@@ -40,7 +40,7 @@ firestore.collection('product').get()
     // console.log('for loop')
     // console.log(productArray[i])
     let content = 
-    '<div class="card">\
+    '<div class="card shadow">\
       <div class="carousel slide" data-ride="carousel" data-interval="false">\
         <div class="carousel-inner">\
           <div class="carousel-item active">\
@@ -75,38 +75,3 @@ firestore.collection('product').get()
 .catch(function(error) {
     console.log('Error getting documents: ', error);
 });
-
-
-
-for (let i = 0; i < productArray.length; i++) {
-  console.log('for loop')
-  console.log(productArray[i])
-  // let content = 
-  //   '<div class="card">\
-  //     <div class="carousel slide" data-ride="carousel" data-interval="false">\  
-  //       <div class="carousel-inner">\
-  //         <div class="carousel-item active">\
-  //           <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
-  //         </div>\
-  //         <div class="carousel-item">\
-  //           <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
-  //         </div>\
-  //         <div class="carousel-item">\
-  //           <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
-  //         </div>\
-  //       </div>\
-  //       <a class="carousel-control-prev" href="javascript: void(0)" role="button" data-slide="prev">\
-  //         <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
-  //         <span class="sr-only">Previous</span>\
-  //       </a>\
-  //       <a class="carousel-control-next" href="javascript: void(0)" role="button" data-slide="next">\
-  //         <span class="carousel-control-next-icon" aria-hidden="true"></span>\
-  //         <span class="sr-only">Next</span>\
-  //       </a>\
-  //     </div>\
-  //     <div class="card-body">\
-  //       <p>'+ productArray[i]. +'</p>\
-  //       <price>$5,180</price>\
-  //     </div>\
-  //   </div>'
-}
