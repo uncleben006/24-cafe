@@ -9,6 +9,64 @@
   <title>24 磅羽球咖啡廳</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./stylesheets/all.css">
+  <style>
+    @font-face {
+      font-family: 'icomoon';
+      src: url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.eot?-9haulc');
+      src: url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.eot?#iefix-9haulc') format('embedded-opentype'),
+      url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.woff?-9haulc') format('woff'),
+      url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.ttf?-9haulc') format('truetype'),
+      url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.svg?-9haulc#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-family: 'icomoon';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .icon-spinner-6:before {
+      content: "\e005";
+    }
+    @keyframes anim-rotate {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .spinner {
+      display: inline-block;
+      font-size: 4em;
+      height: 1em;
+      line-height: 1;
+      margin: .5em;
+      animation: anim-rotate 2s infinite linear;
+      color: #fff;
+      text-shadow: 0 0 .25em rgba(255, 255, 255, .3);
+    }
+    .spinner--steps {
+      animation: anim-rotate 1s infinite steps(8);
+    }
+    .spinner--steps2 {
+      animation: anim-rotate 1s infinite steps(12);
+    }
+
+    body {
+      background: #181818;
+    }
+  </style>
 </head>
 
 <body>
@@ -46,11 +104,13 @@
     </div>
   </nav>
   <!-- header -->
-  <header class="mb-5 merchandise-header">
+  <header class="merchandise-header">
     <div class="container my-1">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="./">Home</a>
+          </li>
           <li class="breadcrumb-item active">Batminton</li>
         </ol>
       </nav>
@@ -60,8 +120,11 @@
   <section class="container-fluid merchandise-carousel">
     <!-- <div class="py-3 my-3 border"></div> -->
     <div class="container">
-      <div class="card-columns">
-        <div class="card">
+      <div class="card-columns py-5" id="productColumn" style="position: relative; min-height: 35vh">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+          <div class="spinner icon-spinner-6" aria-hidden="true"></div>
+        </div>        
+        <!-- <div class="card">
           <div class="carousel slide" data-ride="carousel" data-interval="false">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -87,7 +150,7 @@
             <p>[24磅羽球用具] YONEX 羽球拍 DUORA 10 (李宗偉戰拍 雙面情人)</p>
             <price>$5,180</price>
           </div>    
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -150,9 +213,13 @@
           <a href="./">店員資料</a>
         </span>
       </div>
-      <div>      
-        <a target="_blank" href="https://www.facebook.com/cafe24lb/"><img class="footer-icon" src="./images/facebook-logo.svg" alt=""></a>
-        <a target="_blank" href="https://www.instagram.com/cafe24lb/"><img class="footer-icon" src="./images/instagram-logo.svg" alt=""></a>
+      <div>
+        <a target="_blank" href="https://www.facebook.com/cafe24lb/">
+          <img class="footer-icon" src="./images/facebook-logo.svg" alt="">
+        </a>
+        <a target="_blank" href="https://www.instagram.com/cafe24lb/">
+          <img class="footer-icon" src="./images/instagram-logo.svg" alt="">
+        </a>
       </div>
       <small>© Copright 2018 - 24lb Cafe & Badminton</small>
     </div>
@@ -175,7 +242,7 @@
   <script src="./javascripts/firebase-custom.js"></script>
   <script src="./javascripts/vendor.js"></script>
   <script src="./javascripts/all.js"></script>
-  
+
 </body>
 
 </html>
