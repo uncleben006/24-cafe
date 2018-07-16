@@ -38,35 +38,40 @@ firestore.collection('product').get()
   let str = ''
   for (let i = 0; i < productArray.length; i++) {
     // console.log('for loop')
-    // console.log(productArray[i])
+    // console.log(productArray[i])    
+    let productName = productArray[i].name
+    let productShortName = productName.substring(0,29)      
+    let productPrice = productArray[i].price
+    console.log(productArray[i].name.length)   
+    if(productArray[i].name.length > 30) { productShortName+='...' }
     let content = 
-    '<div class="card shadow">\
-      <div class="carousel slide" data-ride="carousel" data-interval="false">\
-        <div class="carousel-inner">\
-          <div class="carousel-item active">\
-            <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
+      '<div class="card shadow">\
+        <div class="carousel slide" data-ride="carousel" data-interval="false">\
+          <div class="carousel-inner">\
+            <div class="carousel-item active">\
+              <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
+            </div>\
+            <div class="carousel-item">\
+              <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
+            </div>\
+            <div class="carousel-item">\
+              <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
+            </div>\
           </div>\
-          <div class="carousel-item">\
-            <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
-          </div>\
-          <div class="carousel-item">\
-            <img src="./images/24-cafe-badminton-racket.jpg" alt="">\
-          </div>\
+          <a class="carousel-control-prev" href="javascript: void(0)" role="button" data-slide="prev">\
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
+            <span class="sr-only">Previous</span>\
+          </a>\
+          <a class="carousel-control-next" href="javascript: void(0)" role="button" data-slide="next">\
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>\
+            <span class="sr-only">Next</span>\
+          </a>\
         </div>\
-        <a class="carousel-control-prev" href="javascript: void(0)" role="button" data-slide="prev">\
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
-          <span class="sr-only">Previous</span>\
-        </a>\
-        <a class="carousel-control-next" href="javascript: void(0)" role="button" data-slide="next">\
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>\
-          <span class="sr-only">Next</span>\
-        </a>\
-      </div>\
-      <div class="card-body">\
-        <p>'+ productArray[i].name +'</p>\
-        <price>$'+ productArray[i].price +'</price>\
-      </div>\
-    </div>'
+        <div class="card-body">\
+          <p title="'+ productName +'">'+ productShortName +'</p>\
+          <price>$'+ productPrice +'</price>\
+        </div>\
+      </div>'
     str+= content
   }
   // console.log(str)
@@ -75,3 +80,19 @@ firestore.collection('product').get()
 .catch(function(error) {
     console.log('Error getting documents: ', error);
 });
+
+
+
+// upload part
+// Create a root reference
+var storageRef = firebase.storage().ref();
+var mountainsRef = storageRef.child('../images/24-cafe-logo.jpg');
+// Create a reference to 'mountains.jpg'
+var mountainsRef = storageRef.child('mountains.jpg');
+
+// Create a reference to 'images/mountains.jpg'
+var mountainImagesRef = storageRef.child('images/mountains.jpg');
+
+// While the file names are the same, the references point to different files
+console.log(mountainsRef.name === mountainImagesRef.name )           // true
+console.log(mountainsRef.fullPath === mountainImagesRef.fullPath )   // false
