@@ -7,6 +7,7 @@ const uglify = require('gulp-uglify');
 const autoprefixer = require('autoprefixer');
 const minimist = require('minimist'); // 用來讀取指令轉成變數
 const gulpSequence = require('gulp-sequence').use(gulp);
+const firebase = require("firebase");
 
 // production || development
 // # gulp --env production

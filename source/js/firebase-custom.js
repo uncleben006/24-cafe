@@ -3,7 +3,10 @@ var productArray = []
 firebase.initializeApp({
   apiKey: 'AIzaSyCSYD-7qz06ZUa-OkCQGtJWcB2papxme_U',
   authDomain: 'cafe-24.firebaseapp.com',
-  projectId: 'cafe-24'
+  projectId: 'cafe-24',
+  databaseURL: "https://cafe-24.firebaseio.com",
+  storageBucket: "cafe-24.appspot.com",
+  messagingSenderId: "438960617286"
 });
 
 // Initialize Cloud Firestore through Firebase
@@ -85,14 +88,5 @@ firestore.collection('product').get()
 
 // upload part
 // Create a root reference
+
 var storageRef = firebase.storage().ref();
-var mountainsRef = storageRef.child('../images/24-cafe-logo.jpg');
-// Create a reference to 'mountains.jpg'
-var mountainsRef = storageRef.child('mountains.jpg');
-
-// Create a reference to 'images/mountains.jpg'
-var mountainImagesRef = storageRef.child('images/mountains.jpg');
-
-// While the file names are the same, the references point to different files
-console.log(mountainsRef.name === mountainImagesRef.name )           // true
-console.log(mountainsRef.fullPath === mountainImagesRef.fullPath )   // false
